@@ -8,7 +8,7 @@ Instale las dependencias con
 pip install -r requirements.txt  
 ```
 
-Para descargar el dataset desde azure ejecute los siguientes comandos
+Para descargar el dataset desde azure, ejecute los siguientes comandos
 
 ```
 $ dvc remote add -d myremote azure://cenia

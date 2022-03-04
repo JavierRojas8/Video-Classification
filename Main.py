@@ -13,11 +13,11 @@ train_loader = torch.utils.data.DataLoader(train_dataset,batch_size=1, shuffle=T
 model = Resnet3D()
 if usecuda:
     model= model.cuda()
+
+### se recorre el dataloader y se hace una inferencia, videos listos para entrenar el modelo    
 for video, label in train_loader:
     if usecuda:
         video = video.cuda()
         label = label.cuda()
-    print(video.shape)
-    
     prediction = model(video).argmax()
     print(prediction, label)
