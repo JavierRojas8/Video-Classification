@@ -20,11 +20,11 @@ class load_dataset():
             key="video",
             transform=torchvision.transforms.Compose(
                 [
-                    UniformTemporalSubsample(200),
+                    UniformTemporalSubsample(10),
                     torchvision.transforms.Lambda(lambda x: x/255.0),
                     NormalizeVideo([0.45, 0.45, 0.45], [0.225, 0.225, 0.225]),
-                    ShortSideScale(size=256),
-                    CenterCropVideo(crop_size=(256, 256))
+                    ShortSideScale(size=200),
+                    CenterCropVideo(crop_size=(200, 200))
                 ]
             ),
         )
